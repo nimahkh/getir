@@ -1,0 +1,37 @@
+{
+  "name": "getir",
+  "version": "1.0.0",
+  "description": "Getir challenge test",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimahkh/getir.git"
+  },
+  "author": "nima habibkhoda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nimahkh/getir/issues"
+  },
+  "homepage": "https://github.com/nimahkh/getir#readme",
+  "dependencies": {
+    "@joi/date": "^2.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "joi": "^17.3.0",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.6"
+  }
+}
