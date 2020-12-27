@@ -2,8 +2,8 @@ import express from 'express'
 import createError from 'http-errors'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import routes from '../routes'
-import models from '../models'
+import routes from './routes'
+import models from './models'
 
 const app = express();
 

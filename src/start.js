@@ -1,7 +1,7 @@
 require("regenerator-runtime/runtime");
 import app from "./app"
-import config from "../config";
-import {connectDb} from '../models'
+import config from "./config";
+import {connectDb} from './models'
 
 //Run project on port variable
 connectDb().then(async () => {

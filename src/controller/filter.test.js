@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'
 import bodyParser from "body-parser"
-import app from "../src/app"
+import app from "../app"
 import supertest from "supertest"
 
 const request = supertest(app)
