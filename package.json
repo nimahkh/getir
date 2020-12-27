@@ -8,7 +8,7 @@
     "babel": "npx -p @babel/cli -p @babel/core babel --version",
     "start:dev": "nodemon --exec babel-node ./src/start.js",
     "start": "node build/start.js",
-    "build": "npm run clean && npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src --ignore node_modules,test,.git,.idea",
+    "build": "npm run clean && npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src .env globalConfig.json --ignore node_modules,test,.git,.idea",
     "test": "jest"
   },
   "repository": {
