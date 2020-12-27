@@ -9,7 +9,7 @@
     "start:dev": "nodemon --exec babel-node ./src/start.js",
     "start": "node build/start.js",
     "rename": "node -e \"require('fs').rename('./build/.env.example', './build/.env', function(err) { if (err) console.log(err); console.log('File renamed!') })\"",
-    "build:babel": "npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src .env.example globalConfig.json --ignore node_modules,test,.git,.idea",
+    "build:babel": "npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src .env.example globalConfig.json",
     "build": "npm run clean && npm run build:babel && npm run rename",
     "test": "jest"
   },
