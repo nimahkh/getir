@@ -1,10 +1,12 @@
 ###Installation 
-Just you need to clone the repository
+1- Just you need to clone the repository
 ```
 git clone https://github.com/nimahkh/getir
 ```
 
-Then install dependencies and run the project
+2- Rename .env.example to .env and fill the variables
+
+3- Then install dependencies and run the project
 
 ```
 npm i && npm run start:dev
