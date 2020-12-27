@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "c7e8a89f-7c5a-4a42-b090-0c3cff06caa5",
+		"name": "getir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Filters",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startDate\": \"2016-01-29\",\n    \"endDate\": \"2016-02-02\",\n    \"minCount\": 2000,\n    \"maxCount\": 4000\n}"
+				},
+				"url": {
+					"raw": "{{production_url}}/filter",
+					"host": [
+						"{{production_url}}"
+					],
+					"path": [
+						"filter"
+					]
+				},
+				"description": "Get records with filters of count and date"
+			},
+			"response": []
+		}
+	]
+}
