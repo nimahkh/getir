@@ -4,7 +4,10 @@
   "description": "Getir challenge test",
   "main": "./src/start.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/start.js",
+    "babel": "npx -p @babel/cli -p @babel/core babel --version",
+    "start:dev": "nodemon --exec babel-node ./src/start.js",
+    "start": "npm run build && node build/src/start.js",
+    "build": "npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files . --ignore node_modules,test,.git,.idea",
     "test": "jest"
   },
   "repository": {
@@ -27,7 +30,8 @@
     "joi": "^17.3.0",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

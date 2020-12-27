@@ -1,3 +1,4 @@
+require("regenerator-runtime/runtime");
 import app from "./app"
 import config from "../config";
 import {connectDb} from '../models'
