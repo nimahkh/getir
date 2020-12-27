@@ -2,6 +2,9 @@ import 'regenerator-runtime/runtime'
 import bodyParser from "body-parser"
 import app from "../app"
 import supertest from "supertest"
+import mongoose from "mongoose";
+import config from "../config";
+import Records from "../models/records";
 
 const request = supertest(app)
 
@@ -14,8 +17,8 @@ function fetch(data, url) {
 }
 
 const correctRequest = {
-    "startDate": "2016-01-29",
-    "endDate": "2016-02-02",
+    "startDate": "2016-01-30",
+    "endDate": "2016-02-01",
     "minCount": 2000,
     "maxCount": 4000
 }
@@ -45,6 +48,28 @@ const request4 = {
 }
 
 describe('Filter controller test', () => {
+
+    let connection, result, getObjects, expectedOetObjects;
+    // It's just so easy to connect to the MongoDB Memory Server
+    // By using mongoose.connect
+    beforeAll(async () => {
+        connection = await  mongoose.connect(config.mongo_url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true,
+            dbName: config.database,
+            readPreference: 'nearest'
+        }, (err) => {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+        });
+
+    });
+
+    afterAll(async () => {
+        await connection.close();
+    });
 
     it("Sending wrong end date", async () => {
         jest.useFakeTimers()
@@ -85,5 +110,23 @@ describe('Filter controller test', () => {
         cloneRequest.endDate = '2016-01-28' //less than 2016-01-29
         const result = await fetch(cloneRequest, '/filter')
         expect(result.body.msg).toBe('"endDate" must be greater than "ref:startDate"')
+    })
+
+    it("Sending maxCount as string", async () => {
+        jest.useFakeTimers()
+        const cloneRequest = Object.assign({}, correctRequest);
+        cloneRequest.maxCount = '4000'
+        const result = await fetch(cloneRequest, '/filter')
+        expect(result.body.msg).toBe('')
+        expect(result.body.records.length).toBeGreaterThan(0)
+    })
+
+    it("Sending minCount as string", async () => {
+        jest.useFakeTimers()
+        const cloneRequest = Object.assign({}, correctRequest);
+        cloneRequest.minCount = '2000'
+        const result = await fetch(cloneRequest, '/filter')
+        expect(result.body.msg).toBe('')
+        expect(result.body.records.length).toBeGreaterThan(0)
     })
 })
