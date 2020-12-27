@@ -1,7 +1,12 @@
 import {response} from "../utils"
 import {filterRequest} from "./requests/filter"
-//Filter controller
 
+/**
+ * Filter controller
+ * @param req
+ * @param res
+ * @returns {boolean}
+ */
 function filter(req, res) {
     const {Records} = req.context.models
     const data = req.body

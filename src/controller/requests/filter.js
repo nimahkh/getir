@@ -1,5 +1,8 @@
 const Joi = require('joi').extend(require('@joi/date'));
 
+/**
+ * validate requests
+ */
 const filterRequest = Joi.object({
     startDate: Joi.date().format('YYYY-MM-DD').required(),
     endDate: Joi.date().format('YYYY-MM-DD').greater(Joi.ref('startDate')).required(),

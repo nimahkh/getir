@@ -1,7 +1,10 @@
 import express from "express";
 const router = express.Router();
 
-// Home page route.
+/**
+ * Index router
+ * GET
+ */
 router.get("/", function (req, res) {
     res.send("Hello Getir");
 });

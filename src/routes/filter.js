@@ -3,7 +3,10 @@ import controller from '../controller/filter'
 const router = express.Router();
 
 
-// Filter controller route.
+/**
+ * filter router
+ * POST
+ */
 router.post("/filter", function (req, res) {
   controller.filter(req, res);
 });
