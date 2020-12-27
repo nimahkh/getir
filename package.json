@@ -7,8 +7,8 @@
     "clean": "rimraf build",
     "babel": "npx -p @babel/cli -p @babel/core babel --version",
     "start:dev": "nodemon --exec babel-node ./src/start.js",
-    "start": "npm run clean && npm run build && node build/start.js",
-    "build": "npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src --ignore node_modules,test,.git,.idea",
+    "start": "node build/start.js",
+    "build": "npm run clean && npx -p @babel/cli -p @babel/core babel --out-dir ./build --source-maps --copy-files ./src --ignore node_modules,test,.git,.idea",
     "test": "jest"
   },
   "repository": {
