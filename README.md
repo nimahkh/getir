@@ -1,4 +1,4 @@
-###Installation 
+### Installation 
 1- Just you need to clone the repository
 ```
 git clone https://github.com/nimahkh/getir
@@ -24,13 +24,13 @@ npm run start
 npm run build
 ```
 
-###Test
+### Test
 
 ```
 npm run test
 ```
 
-###Run on Heroku
+### Run on Heroku
 
 after pushing the code on heroku master, you have to set envs on it as below
 
