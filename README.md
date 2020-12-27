@@ -1,4 +1,4 @@
-### Installation 
+### :heavy_check_mark: Installation 
 1- Just you need to clone the repository
 ```
 git clone https://github.com/nimahkh/getir
@@ -15,22 +15,26 @@ npm i && npm run start:dev
 or if you need a production mode:
 
 ```
-npm run start
+npm run build && npm run start
 ```
 
-### BUILD
+### :heavy_check_mark: BUILD
+
+Creating a production mode 
 
 ```
 npm run build
 ```
 
-### Test
+### :heavy_check_mark: Test
+
+you can run both injection test and Unit test with the command in below. 
 
 ```
 npm run test
 ```
 
-### Run on Heroku
+### :heavy_check_mark: Run on Heroku
 
 after pushing the code on heroku master, you have to set envs on it as below
 
@@ -43,7 +47,7 @@ after pushing the code on heroku master, you have to set envs on it as below
 after that you can open your heroku environment like my demo:
 `https://hidden-coast-51109.herokuapp.com/`
 
-### Sending Parameters
+### :heavy_check_mark: Sending Parameters
 
 -`/filter` router  - POST 
 
@@ -54,3 +58,6 @@ after that you can open your heroku environment like my demo:
 | minCount  | 2000       | minCount can not be bigger than maxCount  |
 | maxCount  | 4000       | -                                         |
 
+### :heavy_check_mark: POSTMAN
+
+You can download Environments and collection in `collections_document` folder.
