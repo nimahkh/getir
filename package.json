@@ -4,7 +4,7 @@
   "description": "Getir challenge test",
   "main": "./src/start.js",
   "scripts": {
-    "clean": "rimraf build/*",
+    "clean": "rimraf build",
     "babel": "npx -p @babel/cli -p @babel/core babel --version",
     "start:dev": "nodemon --exec babel-node ./src/start.js",
     "start": "npm run clean && npm run build && node build/src/start.js",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@shelf/jest-mongodb": "^1.2.3",
