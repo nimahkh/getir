@@ -13,4 +13,31 @@ const recordsSchema = new mongoose.Schema(
 
 const Records = mongoose.model('Records', recordsSchema);
 
-export default Records;
+const FilterRecords = (startDate, endDate, minCount, maxCount) => {
+    return Records.aggregate([
+        {
+            $addFields: {
+                totalCount: {$sum: "$counts"},
+            }
+        },
+        {$unset: ["_id", "counts", "value"]},
+        {
+            "$match": {
+                "createdAt": {
+                    "$gte": new Date(startDate),
+                    "$lt": new Date(endDate)
+                }
+            },
+        },
+        {
+            "$match": {
+                "totalCount": {
+                    "$gt": minCount,
+                    "$lt": maxCount
+                }
+            },
+        }
+    ])
+}
+
+export default {Records, FilterRecords};

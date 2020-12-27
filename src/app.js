@@ -2,9 +2,8 @@ import express from 'express'
 import createError from 'http-errors'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import routes from './routes'
-import config from "./config";
-import models , {connectDb} from './models'
+import routes from '../routes'
+import models from '../models'
 
 const app = express();
 
@@ -48,9 +47,4 @@ app.use(function (err, req, res, next) {
     res.render("error");
 });
 
-//Run project on port variable
-connectDb().then(async () => {
-    app.listen(config.port, () => {
-        console.log(`Example app listening at http://localhost:${config.port}`);
-    });
-})
+export default app
